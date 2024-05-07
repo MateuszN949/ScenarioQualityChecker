@@ -24,3 +24,7 @@ System actor: System
         - System informs about the correct addition of an instance and presents the updated list of instances.
 - Librarian confirms book addition.
 - System informs about the correct addition of the book.
+
+### link to product and sprint backlog 
+- [link to sprint backlog - excel](https://docs.google.com/spreadsheets/d/1VTPMHFyXUM11LUr3ILr5nuh_HHOfM-2V/edit?usp=sharing&ouid=107569523661238886492&rtpof=true&sd=true)
+- [link to sprint backlog - trello](https://trello.com/b/Ag2yoZ3L/scrum-board)
