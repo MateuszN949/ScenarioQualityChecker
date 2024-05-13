@@ -28,3 +28,31 @@ System actor: System
 ### link to product and sprint backlog 
 - [link to sprint backlog - excel](https://docs.google.com/spreadsheets/d/1VTPMHFyXUM11LUr3ILr5nuh_HHOfM-2V/edit?usp=sharing&ouid=107569523661238886492&rtpof=true&sd=true)
 - [link to sprint backlog - trello](https://trello.com/b/Ag2yoZ3L/scrum-board)
+
+### Example of Scenario in JSON format;
+```json
+{
+  "title": "title",
+  "actors": [
+    "actor1",
+    "actor2"
+  ],
+  "systemActor": "systemActor",
+  "steps": [
+    {
+      "keyword": "IF",
+      "text": "text",
+      "steps": null
+    },
+    {
+      "text": "text",
+      "steps": [
+        {
+          "text": "text",
+          "steps": null
+        }
+      ]
+    }
+  ]
+}
+```
