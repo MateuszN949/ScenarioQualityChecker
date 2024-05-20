@@ -12,7 +12,7 @@ public class ConditionalDecisionsCounter implements Visitor {
     private int CountDecisions(Step step) {
         int decisionsCount = 0;
 
-        if (step.keyword.equals("IF") || step.keyword.equals("ELSE")) {
+        if (step.keyword != null && (step.keyword.equals("IF") || step.keyword.equals("ELSE"))) {
             decisionsCount += 1;
         }
 
