@@ -2,7 +2,7 @@ package pl.put.poznan.transformer.logic;
 
 import java.util.Arrays;
 
-public class Scenario {
+public class Scenario implements Element {
     public String title;
 
     public String[] actors;
@@ -36,5 +36,8 @@ public class Scenario {
                 '}';
     }
 
-
+    @Override
+    public void Accept(Visitor visitor){
+        visitor.Visit(this);
+    }
 }
