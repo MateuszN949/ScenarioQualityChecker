@@ -3,14 +3,17 @@ package pl.put.poznan.transformer.logic;
 public class StepsCounter implements Visitor {
     private int sumAllSteps;
 
-    StepsCounter() {
+    public StepsCounter() {
         this.sumAllSteps = 0;
     }
 
     private int CountSteps(Step step) {
         int stepCount = 1;
-        for (Step subStep : step.steps) {
-            stepCount += CountSteps(subStep);
+
+        if (step.steps != null) {
+            for (Step subStep : step.steps) {
+                stepCount += CountSteps(subStep);
+            }
         }
 
         return stepCount;
@@ -18,8 +21,10 @@ public class StepsCounter implements Visitor {
 
     @Override
     public void Visit(Scenario scenario) {
-        for (Step step : scenario.steps) {
-            this.sumAllSteps += CountSteps(step);
+        if (scenario.steps != null) {
+            for (Step step : scenario.steps) {
+                this.sumAllSteps += CountSteps(step);
+            }
         }
     }
 

@@ -1,21 +1,25 @@
 package pl.put.poznan.transformer.logic;
 
+import org.springframework.boot.autoconfigure.web.servlet.JspTemplateAvailabilityProvider;
+
 public class ConditionalDecisionsCounter implements Visitor {
     private int sumAllConditionalDecisions;
 
-    ConditionalDecisionsCounter() {
+    public ConditionalDecisionsCounter() {
         this.sumAllConditionalDecisions = 0;
     }
 
     private int CountDecisions(Step step) {
         int decisionsCount = 0;
 
-        if (step.text.startsWith("IF") || step.text.startsWith("ELSE")) {
+        if (step.keyword.equals("IF") || step.keyword.equals("ELSE")) {
             decisionsCount += 1;
         }
 
-        for (Step subStep : step.steps) {
-            decisionsCount += CountDecisions(subStep);
+        if (step.steps != null) {
+            for (Step subStep : step.steps) {
+                decisionsCount += CountDecisions(subStep);
+            }
         }
 
         return decisionsCount;
@@ -23,8 +27,10 @@ public class ConditionalDecisionsCounter implements Visitor {
 
     @Override
     public void Visit(Scenario scenario) {
-        for (Step step : scenario.steps) {
-            this.sumAllConditionalDecisions += CountDecisions(step);
+        if (scenario.steps != null) {
+            for (Step step : scenario.steps) {
+                this.sumAllConditionalDecisions += CountDecisions(step);
+            }
         }
     }
 
