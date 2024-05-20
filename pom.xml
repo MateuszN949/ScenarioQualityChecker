@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -62,20 +61,24 @@
                     </arguments>
                 </configuration>
             </plugin>
-            <plugin>
-              <artifactId>maven-assembly-plugin</artifactId>
-              <configuration>
-                <archive>
-                  <manifest>
-                    <mainClass>pl.put.poznan.transformer.app.TextTransformerApplication</mainClass>
-                  </manifest>
-                </archive>
-                <descriptorRefs>
-                  <descriptorRef>jar-with-dependencies</descriptorRef>
-                </descriptorRefs>
-                <appendAssemblyId>false</appendAssemblyId>
-              </configuration>
-             </plugin>
+            <!--   <artifactId>maven-assembly-plugin</artifactId> -->
+            <!--   <configuration> -->
+            <!--     <archive> -->
+            <!--       <manifest> -->
+            <!--         <mainClass>pl.put.poznan.transformer.app.TextTransformerApplication</mainClass> -->
+            <!--       </manifest> -->
+            <!--     </archive> -->
+            <!--     <descriptorRefs> -->
+            <!--       <descriptorRef>jar-with-dependencies</descriptorRef> -->
+            <!--     </descriptorRefs> -->
+            <!--     <appendAssemblyId>false</appendAssemblyId> -->
+            <!--   </configuration> -->
+            <!--  </plugin> -->
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+              </plugin>
         </plugins>
     </build>
 
@@ -92,7 +95,7 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <distributionManagement>
+  <distributionManagement>
     <repository>
       <id>github</id>
       <name>GitHub Packages</name>
@@ -100,5 +103,16 @@
     </repository>
   </distributionManagement>
 
+<!-- <reporting> -->
+<!--     <plugins> -->
+<!--       <plugin> -->
+<!--         <groupId>org.apache.maven.plugins</groupId> -->
+<!--         <artifactId>maven-javadoc-plugin</artifactId> -->
+<!--         <version>3.6.3</version> -->
+<!--         <configuration> -->
+<!--         </configuration> -->
+<!--       </plugin> -->
+<!--     </plugins> -->
+<!--   </reporting> -->
 
 </project>
