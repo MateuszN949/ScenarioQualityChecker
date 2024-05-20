@@ -7,8 +7,11 @@ The program operates on scenarion in following format:
 - The steps may start with the keywords IF, ELSE, FOR EACH
 
 Example:
+
 Title: Book addition
+
 Actors:  Librarian
+
 System actor: System
 
 - Librarian selects options to add a new book item
@@ -25,9 +28,16 @@ System actor: System
 - Librarian confirms book addition.
 - System informs about the correct addition of the book.
 
-### link to product and sprint backlog 
+### functionality
+- Check the number of the steps the whole scenario contains, to asses how complicated it is.
+- Check how many steps contain keywords to find out how many conditional decisions are in the scenario.
+- Obtain a scenario containing only sub-scenarios up to a certain level to present a simplified version of the requirements.
+- Using the available functions via REST to be able to integrate the tool with other applications.
+
+### important links
 - [link to sprint backlog - excel](https://docs.google.com/spreadsheets/d/1VTPMHFyXUM11LUr3ILr5nuh_HHOfM-2V/edit?usp=sharing&ouid=107569523661238886492&rtpof=true&sd=true)
 - [link to sprint backlog - trello](https://trello.com/b/Ag2yoZ3L/scrum-board)
+- [link to automatically generated documentation](https://mateuszn949.github.io/ScenarioQualityChecker/javadoc/)
 
 ### Example of Scenario in JSON format;
 ```json
