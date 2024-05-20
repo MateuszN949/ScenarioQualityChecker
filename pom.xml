@@ -12,7 +12,7 @@
 
     <groupId>pl.put.poznan</groupId>
     <artifactId>scenario-quality-checker</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
 	<properties>
         <java.version>11</java.version>
@@ -82,7 +82,6 @@
                 <executions>
                       <execution>
                           <goals>
-                            <goal>jar</goal>
                             <goal>javadoc</goal>
                           </goals>
                           <phase>package</phase>
