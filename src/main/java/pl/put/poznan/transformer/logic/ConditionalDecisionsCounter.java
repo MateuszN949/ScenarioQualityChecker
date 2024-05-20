@@ -27,6 +27,7 @@ public class ConditionalDecisionsCounter implements Visitor {
 
     @Override
     public void Visit(Scenario scenario) {
+        this.sumAllConditionalDecisions = 0;
         if (scenario.steps != null) {
             for (Step step : scenario.steps) {
                 this.sumAllConditionalDecisions += CountDecisions(step);

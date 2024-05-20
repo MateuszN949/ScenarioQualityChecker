@@ -21,6 +21,7 @@ public class StepsCounter implements Visitor {
 
     @Override
     public void Visit(Scenario scenario) {
+        this.sumAllSteps = 0;
         if (scenario.steps != null) {
             for (Step step : scenario.steps) {
                 this.sumAllSteps += CountSteps(step);

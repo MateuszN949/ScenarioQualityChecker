@@ -62,7 +62,20 @@
                     </arguments>
                 </configuration>
             </plugin>
-
+            <plugin>
+              <artifactId>maven-assembly-plugin</artifactId>
+              <configuration>
+                <archive>
+                  <manifest>
+                    <mainClass>pl.put.poznan.transformer.app.TextTransformerApplication</mainClass>
+                  </manifest>
+                </archive>
+                <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                <appendAssemblyId>false</appendAssemblyId>
+              </configuration>
+             </plugin>
         </plugins>
     </build>
 
