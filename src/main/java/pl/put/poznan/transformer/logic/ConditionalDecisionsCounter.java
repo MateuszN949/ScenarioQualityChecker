@@ -3,7 +3,7 @@ package pl.put.poznan.transformer.logic;
 public class ConditionalDecisionsCounter implements Visitor {
     private int sumAllConditionalDecisions;
 
-    ConditionalDecisionsCounter() {
+    public ConditionalDecisionsCounter() {
         this.sumAllConditionalDecisions = 0;
     }
 
