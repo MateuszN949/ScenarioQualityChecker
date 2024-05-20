@@ -8,20 +8,37 @@ import pl.put.poznan.transformer.logic.Scenario;
 import pl.put.poznan.transformer.logic.StepsCounter;
 import pl.put.poznan.transformer.logic.StepsPruner;
 
+/**
+ * This is the ScenarioController class.
+ * It is used to handle the REST API requests.
+ */
 @RestController
 @RequestMapping("/scenario")
 public class ScenarioController {
-
+    /**
+     * This is the scenario.
+     */
     public Scenario scenario;
+    /**
+     * This is the logger.
+     */
     private static final Logger logger = LoggerFactory.getLogger(ScenarioController.class);
 
-
+    /**
+     * This is the get method.
+     * It is used to return the scenario.
+     * @return Scenario This returns the scenario.
+     */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public Scenario get(){
         logger.info("Returning scenario");
         return this.scenario;
     }
-
+    /**
+     * This is the getStepsConditions method.
+     * It is used to return the number of conditional decisions in the scenario.
+     * @return int This returns the number of conditional decisions in the scenario.
+     */
     @RequestMapping(value = "/steps/conditions",method = RequestMethod.GET, produces = "application/json")
     public int getStepsConditions(){
         if (scenario == null) {
@@ -36,7 +53,11 @@ public class ScenarioController {
 
         return conditionalDecisionsCounter.getSumAllConditionalDecisions();
     }
-
+    /**
+     * This is the getStepsNumber method.
+     * It is used to return the number of steps in the scenario.
+     * @return int This returns the number of steps in the scenario.
+     */
     @RequestMapping(value = "/steps/counter",method = RequestMethod.GET, produces = "application/json")
     public int getStepsNumber(){
         if (scenario == null) {
@@ -50,7 +71,12 @@ public class ScenarioController {
 
         return stepsCounter.getSumSteps();
     }
-
+    /**
+     * This is the getScenarioPruned method.
+     * It is used to return the scenario with pruned steps.
+     * @param level This is the level of the pruning.
+     * @return Scenario This returns the scenario with pruned steps.
+     */
     @RequestMapping(value = "/{level}",method = RequestMethod.GET, produces = "application/json")
     public Scenario getScenarioPruned(@PathVariable int level) {
 
@@ -60,7 +86,11 @@ public class ScenarioController {
 
         return stepsPruner.getResult();
     }
-
+    /**
+     * This is the post method.
+     * It is used to receive a new scenario.
+     * @param scenario This is the new scenario.
+     */
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public void post(@RequestBody Scenario scenario){
 //        logger.info("Received new scenario");
