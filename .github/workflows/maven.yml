@@ -21,8 +21,10 @@ jobs:
       - name: Generate JAR file
         run: mvn compile assembly:single
 
+      - run: mkdir staging && cp target/*.jar staging
+
       - name: Upload JAR file
         uses: actions/upload-artifact@v4
         with:
-          name: jar
-          path: target/*.jar
+          name: package
+          path: staging
