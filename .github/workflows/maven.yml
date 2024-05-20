@@ -17,3 +17,6 @@ jobs:
           cache: maven
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
+
+      - name: Generate JAR file
+        run: mvn compile assembly:single
