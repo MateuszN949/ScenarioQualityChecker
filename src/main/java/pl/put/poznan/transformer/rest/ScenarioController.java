@@ -63,6 +63,7 @@ public class ScenarioController {
 
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public void post(@RequestBody Scenario scenario){
+//        logger.info("Received new scenario");
         logger.info("Received new scenario");
         this.scenario = scenario;
         logger.debug(this.scenario.toString());
