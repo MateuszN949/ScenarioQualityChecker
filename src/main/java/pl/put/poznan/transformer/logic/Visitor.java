@@ -10,7 +10,6 @@ public interface Visitor {
         * This is the Visit method.
         * It is used to visit the scenario and perform some operations on it.
         * @param scenario This is the scenario that the visitor visits.
-        * This method is called in Elements' accept method.
      */
     public void Visit(Scenario scenario);
 }
