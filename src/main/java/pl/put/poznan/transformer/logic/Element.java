@@ -5,7 +5,7 @@ package pl.put.poznan.transformer.logic;
     * It is used to implement the Visitor design pattern.
     * The element accepts the visitor and performs some operations on it.
  */
-public interface Element {
+public interface Element extends Cloneable {
     /**
         * This is the Accept method.
         * It is used to accept the visitor and perform some operations on it.

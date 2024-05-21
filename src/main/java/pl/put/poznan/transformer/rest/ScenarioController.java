@@ -40,7 +40,7 @@ public class ScenarioController {
      * @return int This returns the number of conditional decisions in the scenario.
      */
     @RequestMapping(value = "/steps/conditions",method = RequestMethod.GET, produces = "application/json")
-    public int getStepsConditions(){
+    public int getStepsConditions() throws CloneNotSupportedException {
         if (scenario == null) {
             return 0;
         }
@@ -59,7 +59,7 @@ public class ScenarioController {
      * @return int This returns the number of steps in the scenario.
      */
     @RequestMapping(value = "/steps/counter",method = RequestMethod.GET, produces = "application/json")
-    public int getStepsNumber(){
+    public int getStepsNumber() throws CloneNotSupportedException {
         if (scenario == null) {
             return 0;
         }
@@ -78,7 +78,7 @@ public class ScenarioController {
      * @return Scenario This returns the scenario with pruned steps.
      */
     @RequestMapping(value = "/{level}",method = RequestMethod.GET, produces = "application/json")
-    public Scenario getScenarioPruned(@PathVariable int level) {
+    public Scenario getScenarioPruned(@PathVariable int level) throws CloneNotSupportedException {
 
         logger.debug(String.valueOf(level));
         StepsPruner stepsPruner = new StepsPruner(level);
