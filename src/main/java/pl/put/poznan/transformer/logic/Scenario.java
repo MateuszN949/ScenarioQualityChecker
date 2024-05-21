@@ -72,7 +72,7 @@ public class Scenario implements Element {
         * @param visitor This is the visitor that the scenario accepts.
      */
     @Override
-    public void Accept(Visitor visitor){
-        visitor.Visit(this);
+    public void Accept(Visitor visitor) throws CloneNotSupportedException {
+        visitor.Visit((Scenario)this.clone());
     }
 }

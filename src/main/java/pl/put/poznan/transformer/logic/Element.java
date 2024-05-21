@@ -11,5 +11,5 @@ public interface Element {
         * It is used to accept the visitor and perform some operations on it.
         * @param visitor This is the visitor that the element accepts.
      */
-    public void Accept(Visitor visitor);
+    public void Accept(Visitor visitor) throws CloneNotSupportedException;
 }
