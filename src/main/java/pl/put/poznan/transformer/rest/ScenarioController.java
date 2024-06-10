@@ -22,7 +22,7 @@ public class ScenarioController {
     /**
      * This is the logger.
      */
-    private static final Logger logger = LoggerFactory.getLogger(ScenarioController.class);
+    public static Logger logger = LoggerFactory.getLogger(ScenarioController.class);
 
     /**
      * This is the get method.
